@@ -3,8 +3,14 @@
   <groupId>org.terracotta.junit</groupId>
   <artifactId>test-listeners</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   <modelVersion>4.0.0</modelVersion>
+
+  <properties>
+    <metadata.build.jenkins.url>http://jenkinsmaster.terracotta.lan:9000/job/test-listeners_trunk_releaser/9/</metadata.build.jenkins.url>
+    <metadata.build.maven.active.profiles>terracotta-repositories,release,tc-publish</metadata.build.maven.active.profiles>
+    <metadata.svn.revision>41008</metadata.svn.revision>
+  </properties>
 
   <dependencies>
     <dependency>
