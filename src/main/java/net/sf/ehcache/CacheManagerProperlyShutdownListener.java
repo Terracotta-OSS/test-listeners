@@ -8,8 +8,17 @@ import java.io.*;
 
 public class CacheManagerProperlyShutdownListener extends RunListener {
 
-  // TODO : override this constant if outputDirectory is specified (xml config or vm argument)
-  public static final String SYSTEM_EXIT_LISTENER_RESULT = "target" + File.separator + "surefire-reports" + File.separator;
+  public static String TARGET_FOLDER_LOCATION;
+  static {
+    String currentFolderPath = new File(".").getAbsolutePath();
+    int targetLastIndex = currentFolderPath.lastIndexOf("target");
+    if(targetLastIndex != -1) {
+      TARGET_FOLDER_LOCATION = currentFolderPath.substring(0,targetLastIndex) + File.separator + "target" + File.separator;
+    } else {
+      TARGET_FOLDER_LOCATION = new File("target").getAbsolutePath() + File.separator;
+    }
+  }
+  public static final String SYSTEM_EXIT_LISTENER_RESULT = TARGET_FOLDER_LOCATION + "surefire-reports" + File.separator;
 
   @Override
   public void testRunStarted(Description description) throws Exception {
