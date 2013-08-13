@@ -23,4 +23,9 @@
       <optional>true</optional>
     </dependency>
   </dependencies>
+
+  <scm>
+    <connection>scm:git:git@github.com:Terracotta-OSS/test-listeners.git</connection>                                                                                                                     
+    <developerConnection>scm:git:https://github.com/Terracotta-OSS/test-listeners.git</developerConnection>                                                                             
+  </scm>
 </project>
