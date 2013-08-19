@@ -40,7 +40,7 @@ public class SystemExitListener extends RunListener {
 						+ className + "\n")
 				.append(descriptionDisplayName
 						+ "  Time elapsed: 0.019 sec  <<< FAILURE!\n")
-				.append("This test crashed the VM running it, probably because of a System.exit()\n\n");
+				.append("This test has crashed or timeout. Check logs for details.\n\n");
 		String fileNameTxt = SYSTEM_EXIT_LISTENER_RESULT + className + ".txt";
 		writeReport(text, fileNameTxt);
 
@@ -56,7 +56,7 @@ public class SystemExitListener extends RunListener {
 				.append("    <error message=\""
 						+ descriptionDisplayName
 						+ "\" type=\"System.exit\"><![CDATA[This test crashed the VM running it, probably because of a System.exit()]]></error>\n")
-				.append("    <system-err>This test crashed the VM running it, probably because of a System.exit().</system-err>\n")
+				.append("    <system-err>This test crashed has crashed or timeout. Check logs for details.</system-err>\n")
 				.append("  </testcase>\n").append("</testsuite>");
 		writeReport(xml, fileNameXml);
 	}
